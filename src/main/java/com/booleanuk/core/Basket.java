@@ -16,4 +16,14 @@ public class Basket {
         items.put(product, price);
         return true;
     }
+
+    int total() {
+        int total = 0;
+
+        for (Integer price : items.values()) {
+            total += price;
+        }
+
+        return total;
+    }
 }
