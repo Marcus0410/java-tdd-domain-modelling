@@ -23,4 +23,22 @@ public class BasketTest {
         
         Assertions.assertFalse(basket.add(itemName, price));
     }
+
+    @Test
+    void testTotalEmptyBasket() {
+        Basket basket = new Basket();
+
+        Assertions.assertEquals(0, basket.total());
+    }
+
+    @Test
+    void testTotal() {
+        Basket basket = new Basket();
+        basket.add("a", 5);
+        basket.add("b",35);
+        basket.add("c", 100);
+        basket.add("d", 70);
+
+        Assertions.assertEquals(210, basket.total());
+    }
 }
